@@ -191,29 +191,34 @@ vr.update = function(_, data)
 	if lhpL or rhpL then
 		if lhpL and not data.GrabbingLeft then
 			if lhpL:FindFirstChild("GrabWeld") then
-				lhpL:FindFirstChild("GrabWeld"):Destroy()
-			end
-			if lhpL:FindFirstChild("InteractionWeld") then
-				lhpL:FindFirstChild("InteractionWeld"):Destroy()
-			end
-			if v then
-			local bv = Instance.new("BodyVelocity",v)
+			lhpL:FindFirstChild("GrabWeld"):Destroy()
+			local bv = Instance.new("BodyVelocity",lhpL)
 			bv.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
 			bv.Velocity = la.CFrame.lookVector*40
 			game.Debris:AddItem(bv,0.15)
 			end
+			if lhpL:FindFirstChild("InteractionWeld") then
+			lhpL:FindFirstChild("InteractionWeld"):Destroy()
+			local bv = Instance.new("BodyVelocity",lhpL)
+			bv.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+			bv.Velocity = la.CFrame.lookVector*40
+			game.Debris:AddItem(bv,0.15)
+			end
+		
 			lhpL = nil
 			print("let go of object on l")
 		end
 		if rhpL and not data.GrabbingRight then
 			if rhpL:FindFirstChild("GrabWeld") then
-				rhpL:FindFirstChild("GrabWeld"):Destroy()
+			rhpL:FindFirstChild("GrabWeld"):Destroy()
+			local bv = Instance.new("BodyVelocity",rhpL)
+			bv.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+			bv.Velocity = ra.CFrame.lookVector*40
+			game.Debris:AddItem(bv,0.15)
 			end
 			if rhpL:FindFirstChild("InteractionWeld") then
-				rhpL:FindFirstChild("InteractionWeld"):Destroy()
-			end
-			if v then
-			local bv = Instance.new("BodyVelocity",v)
+			rhpL:FindFirstChild("InteractionWeld"):Destroy()
+			local bv = Instance.new("BodyVelocity",rhpL)
 			bv.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
 			bv.Velocity = ra.CFrame.lookVector*40
 			game.Debris:AddItem(bv,0.15)
