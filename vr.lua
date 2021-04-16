@@ -123,7 +123,7 @@ vr.update = function(_, data)
 				local weld = Instance.new("WeldConstraint")
 				weld.Parent = v
 				if v.Name == "Pistol" then
-					v.CFrame = character:WaitForChild("Left Arm").CFrame * CFrame.new(0,0,0.75) * CFrame.Angles(math.rad(90),0,0)
+					--v.CFrame = character:WaitForChild("Left Arm").CFrame * CFrame.new(0,0,0.75) * CFrame.Angles(math.rad(90),0,0)
 				end
 				weld.Part0 = character:WaitForChild("Left Arm")
 				weld.Part1 = v
@@ -156,7 +156,7 @@ vr.update = function(_, data)
 				local weld = Instance.new("WeldConstraint")
 				weld.Parent = v
 				if v.Name == "Pistol" then
-				v.CFrame = character:WaitForChild("Right Arm").CFrame * CFrame.new(0,0,0.75) * CFrame.Angles(math.rad(90),0,0)
+				--v.CFrame = character:WaitForChild("Right Arm").CFrame * CFrame.new(0,0,0.75) * CFrame.Angles(math.rad(90),0,0)
 				end
 				weld.Part0 = character:WaitForChild("Right Arm")
 				weld.Part1 = v
@@ -199,7 +199,7 @@ vr.update = function(_, data)
 			local bv = Instance.new("BodyVelocity",lhpL)
 			bv.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
 			bv.Velocity = lhpL.CFrame.lookVector*40
-			game.Debris:AddItem(bv,0.5)
+			game.Debris:AddItem(bv,0.15)
 			lhpL = nil
 			print("let go of object on l")
 		end
@@ -213,7 +213,7 @@ vr.update = function(_, data)
 			local bv = Instance.new("BodyVelocity",rhpL)
 			bv.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
 			bv.Velocity = lhpL.CFrame.lookVector*40
-			game.Debris:AddItem(bv,0.5)
+			game.Debris:AddItem(bv,0.15)
 			rhpL = nil
 			print("let go of object on r")
 		end
