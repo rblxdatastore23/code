@@ -196,10 +196,12 @@ vr.update = function(_, data)
 			if lhpL:FindFirstChild("InteractionWeld") then
 				lhpL:FindFirstChild("InteractionWeld"):Destroy()
 			end
+			if lhpL then
 			local bv = Instance.new("BodyVelocity",lhpL)
 			bv.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
-			bv.Velocity = lhpL.CFrame.lookVector*40
+			bv.Velocity = la.CFrame.lookVector*40
 			game.Debris:AddItem(bv,0.15)
+			end
 			lhpL = nil
 			print("let go of object on l")
 		end
@@ -210,10 +212,12 @@ vr.update = function(_, data)
 			if rhpL:FindFirstChild("InteractionWeld") then
 				rhpL:FindFirstChild("InteractionWeld"):Destroy()
 			end
+			if rhpL then
 			local bv = Instance.new("BodyVelocity",rhpL)
 			bv.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
-			bv.Velocity = lhpL.CFrame.lookVector*40
+			bv.Velocity = ra.CFrame.lookVector*40
 			game.Debris:AddItem(bv,0.15)
+			end
 			rhpL = nil
 			print("let go of object on r")
 		end
