@@ -196,8 +196,8 @@ vr.update = function(_, data)
 			if lhpL:FindFirstChild("InteractionWeld") then
 				lhpL:FindFirstChild("InteractionWeld"):Destroy()
 			end
-			if lhpL then
-			local bv = Instance.new("BodyVelocity",lhpL)
+			if v then
+			local bv = Instance.new("BodyVelocity",v)
 			bv.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
 			bv.Velocity = la.CFrame.lookVector*40
 			game.Debris:AddItem(bv,0.15)
@@ -212,8 +212,8 @@ vr.update = function(_, data)
 			if rhpL:FindFirstChild("InteractionWeld") then
 				rhpL:FindFirstChild("InteractionWeld"):Destroy()
 			end
-			if rhpL then
-			local bv = Instance.new("BodyVelocity",rhpL)
+			if v then
+			local bv = Instance.new("BodyVelocity",v)
 			bv.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
 			bv.Velocity = ra.CFrame.lookVector*40
 			game.Debris:AddItem(bv,0.15)
