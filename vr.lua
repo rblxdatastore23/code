@@ -305,15 +305,11 @@ vr.use = function(arm)
 		end
 		if lhpL.Name == "M4A1" and hit then
 			print("left hit part: " .. hit.Name)
-			lhpL:FindFirstChild("GunShot").SoundId = "rbxassetid://3402635080"
-			lhpL:FindFirstChild("GunShot").Pitch = 1.3
 			if hit.Parent:FindFirstChild("Humanoid") then
 				hit.Parent:FindFirstChild("Humanoid").Health -= 5
 			end
 		elseif lhpL.Name == "Pistol" and hit then
 			print("left hit part: " .. hit.Name)
-			lhpL:FindFirstChild("GunShot").SoundId = "rbxassetid://3397156561" 
-			lhpL:FindFirstChild("GunShot").Pitch = 1.3
 			if hit.Parent:FindFirstChild("Humanoid") then
 				hit.Parent:FindFirstChild("Humanoid").Health -= 25
 			end
